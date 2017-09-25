@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        bat(returnStatus: true, returnStdout: true, script: 'mkdir pipeine_dir_pokus')
+        bzt 'f:\\_projects\\jmeter_scripts\\Jemkins.jmx'
       }
     }
   }
