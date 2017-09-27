@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('run_test') {
       steps {
-        bzt 'Jemkins.jmx'
+        bzt(params: 'Jemkins.jmx', generatePerformanceTrend: true, printDebugOutput: true, useBztExitCode: true)
       }
     }
   }
