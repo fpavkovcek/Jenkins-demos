@@ -3,7 +3,11 @@ pipeline {
   stages {
     stage('run_test') {
       steps {
-        bzt(params: 'Jemkins.jmx', generatePerformanceTrend: true, printDebugOutput: true, useBztExitCode: true)
+        bzt(params: 'Jemkins.jmx', alwaysUseVirtualenv: true)
+        catchError() {
+          echo 'error happened'
+        }
+        
       }
     }
   }
